@@ -143,6 +143,7 @@
     <Content Include="Views\Login\insert.cshtml" />
     <Content Include="Views\Login\delete.cshtml" />
     <Content Include="Views\Login\update.cshtml" />
+    <Content Include="Views\Book\getFamousBookList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -155,8 +156,9 @@
     <Compile Include="Models\Book.cs">
       <DependentUpon>SampleMVCModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FamousBookRepository.cs" />
     <Compile Include="Models\IAllRepository.cs" />
-    <Compile Include="Models\IAllRepository1.cs" />
+    <Compile Include="Models\IFamousBook.cs" />
     <Compile Include="Models\Login.cs">
       <DependentUpon>SampleMVCModel.tt</DependentUpon>
     </Compile>

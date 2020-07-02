@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<Generic_Repository_pattern.Models.Book>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "getFamousBookList";
 }
 
-<h2>Index</h2>
+<h2>Famous Book List </h2>
 
-<p>
-    @Html.ActionLink("Create New", "insert")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -29,10 +26,9 @@
             @Html.DisplayFor(modelItem => item.author)
         </td>
         <td>
-            @Html.ActionLink("Edit", "update", new { id=item.id }) |
-            @Html.ActionLink("Details", "display", new { id=item.id }) |
-            @Html.ActionLink("Delete", "delete", new { id=item.id })|
-            @Html.ActionLink("Famous Book List", "getFamousBookList", new { name=item.author })
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
 }

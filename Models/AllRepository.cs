@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Generic_Repository_pattern.Models
 {
-    public class AllRepository<T> : IAllRepository<T> where T : class
+    public class AllRepository<T> :IAllRepository<T> where T : class
     {
         private SampleMVCEntities _context;
         private IDbSet<T> dbEntity;
@@ -17,6 +17,7 @@ namespace Generic_Repository_pattern.Models
             dbEntity = _context.Set<T>(); //to load model
         }
 
+       
         public void deleteModel(int modelId)
         {
            T model = dbEntity.Find(modelId);
@@ -48,4 +49,5 @@ namespace Generic_Repository_pattern.Models
             _context.Entry(model).State = System.Data.Entity.EntityState.Modified;
         }
     }
+
 }

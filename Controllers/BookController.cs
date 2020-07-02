@@ -10,9 +10,11 @@ namespace Generic_Repository_pattern.Controllers
     public class BookController : Controller
     {
         private IAllRepository<Book> obj;
+        private IFamousBook famous;
         public BookController()
         {
             obj = new AllRepository<Book>();
+            famous = new FamousBookRepository();
         }
 
         public ActionResult Index()
@@ -56,6 +58,12 @@ namespace Generic_Repository_pattern.Controllers
             obj.deleteModel(id);
             obj.save();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult getFamousBookList(string name)
+        {
+            var list = famous.GetBooksByAuthor(name);
+            return View(list);
         }
     }
 }

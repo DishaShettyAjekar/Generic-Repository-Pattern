@@ -1,0 +1,34 @@
+﻿@model Generic_Repository_pattern.Models.Book
+
+@{
+    ViewBag.Title = "display";
+}
+
+<h2>display</h2>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.bookname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bookname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
